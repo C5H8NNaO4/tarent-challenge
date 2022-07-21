@@ -151,6 +151,14 @@ All API operations are covered with basic unit tests using jest. In order to run
 npm run test
 ```
 
+### Pulling the repo
+
+In order to fast-forward this repo and its submodules run 
+```sh
+git pull
+git submodule update --remote --merge
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
