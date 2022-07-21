@@ -180,7 +180,7 @@ Forms should be sanitized to prevent injection. (react does sanitize form inputs
 
 - [X] UI
 - [X] REST API
-    - [] Unit tests
+    - [ ] Unit tests
 - [X] Documentation
     - [X] Swagger API docs.
     - [X] Security concerns.
