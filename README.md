@@ -90,6 +90,7 @@
 * Love
 * [React.js](https://reactjs.org/)
 * [express](https://expressjs.com/)
+* [Swagger](https://swagger.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -124,14 +125,18 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 4. Rename `.env.example` to `.env`
-5. Start the backend
+   ```sh
+   mv .env.example .env
    ```
-   cd backend
+   ```powershell
+   Rename-Item ".env.example" -NewName ".env"
+   ```
+5. Start the backend
+   ```sh
    npm start
    ```
 5. Start the frontend
-   ```
-   cd frontend
+   ```sh
    npm start
    ```
 
@@ -173,10 +178,12 @@ Forms should be sanitized to prevent injection. (react does sanitize form inputs
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [X] UI
+- [X] REST API
+    - [ ] Unit tests
+- [X] Documentation
+    - [X] Swagger API docs.
+    - [X] Security concerns.
 
 See the [open issues](https://github.com/C5H8NNaO4/tarent-challenge/issues) for a full list of proposed features (and known issues).
 
