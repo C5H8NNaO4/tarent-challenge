@@ -91,15 +91,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 ### Built With
-
-* [Next.js](https://nextjs.org/)
+* Love
 * [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [express](https://expressjs.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -108,7 +102,6 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -121,18 +114,29 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/C5H8NNaO4/tarent-challenge.git
+   git clone --recurse-submodules -j2 https://github.com/C5H8NNaO4/tarent-challenge.git
    ```
 3. Install NPM packages
    ```sh
+   cd backend
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ```sh
+   cd frontend
+   npm install
+   ```
+4. Rename `.env.example` to `.env`
+5. Start the backend
+   ```
+   cd backend
+   npm start
+   ```
+5. Start the frontend
+   ```
+   cd frontend
+   npm start
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -140,9 +144,30 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Security Concerns
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+A few security concerns come to my mind.
+    * CORS
+    Origin should be limited to the domain the client is running on. In this case `http://localhost:3000`
+    * CSRF
+    A random token should be double posted through cookies and http headers to prevent CSRF attacks.
+    * Check request bodies
+    To prevent crashes XSS or DOS attacks, all request bodies should be tested against plausibility and rejected if they contain invalid or malformed data.
+    * HTTPS
+    In a production environment a secured connection should be used.
+    * Authentication
+    The API should be only accessible by authenticated users.
+    * Authorization
+    The API should be a authorizable based on permissions to prevent leakage of sensitive information.
+    * Software Integrity
+    The code should be unit tested to ensure a degree of integitry in order to prevent bugs slipping into production that could be exploited.
+    * Access Loggin
+    To recognize DOS attempts or other malicious access, sufficient logging should be deployed on the serverside.
+    * Injection
+    Forms should be sanitized to prevent injection. (react does sanitize form inputs).
+    
+
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
