@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/C5H8NNaO4/tarent-challenge">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://www.tarent.de/wp-content/uploads/dark.svg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Tarent Coding Challenge</h3>
