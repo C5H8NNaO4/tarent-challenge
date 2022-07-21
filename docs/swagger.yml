@@ -1,0 +1,429 @@
+openapi: 3.0.0
+info:
+  description: |
+    This is the documentation for the REST API of the challenge from tarent.
+    The api is versioned, so you need to prepend /api/v1/
+  version: "1.0.0"
+  title: Tarent Challenge Backend
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: moritz.roessler@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: 'http://localhost:4000/api/v1'
+tags:
+  - name: training
+    description: Everything around trainings and bookings
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+  - name: user
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
+
+paths:
+  /training:
+    get:
+      parameters:
+        - $ref: '#/components/parameters/csrf'
+      tags:
+        - training
+      summary: List all trainings
+      operationId: getTrainings
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Training'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'read:trainings'
+    post:
+      parameters:
+        - $ref: '#/components/parameters/csrf'
+      requestBody:
+        $ref: '#/components/requestBodies/upsertTraining'
+      tags:
+        - training
+      summary: Add a new training
+      operationId: addTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Training'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'add:training'
+  /training/{id}:
+    put:
+      parameters:
+        - $ref: '#/components/parameters/csrf'
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        $ref: '#/components/requestBodies/upsertTraining'
+      tags:
+        - training
+      summary: Modify an existing training
+      operationId: modifyTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Training'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'add:training'
+    delete:
+      parameters:
+        - $ref: '#/components/parameters/csrf'
+        - $ref: '#/components/parameters/id'
+      tags:
+        - training
+      summary: Delete an existing training
+      operationId: deleteTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Training'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'add:training'
+  /training/{id}/booking:
+    parameters:
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/csrf'
+    get:
+      tags:
+        - training
+      summary: List all bookings for a given training.
+
+      operationId: getBookingsForTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'read:bookings'
+    post:
+      tags:
+        - training
+      summary: Book a given timeslot.
+      requestBody:
+        $ref: '#/components/requestBodies/slotParam'
+      operationId: bookTimeslotForTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+      security:
+        - local_auth:
+            - 'add:booking'
+                
+  /training/{id}/booking/{slot}:
+    delete:
+      tags:
+        - training
+      summary: Cancel a booked timeslot of a training.
+      parameters: 
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/slotSlug'
+      operationId: cancelBookingOfTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'
+      security:
+        - local_auth:
+            - 'delete:booking'
+  /training/{id}/slot/{slot}:
+    delete:
+      tags:
+        - training
+      summary: Delete a timeslot from a training.
+      parameters:
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/slotSlug'
+      operationId: deleteTimeSlotFromTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'
+      security:
+        - local_auth:
+            - 'delete:slot'
+    put:
+      tags:
+        - training
+      summary: Modify a timeslot of a training.
+      parameters:
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/slotSlug'
+      requestBody:
+        $ref: '#/components/requestBodies/slotParam'
+      operationId: modifyTimeSlotOfTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'
+      security:
+        - local_auth:
+            - 'update:slot'
+  /training/{id}/slot/:
+    post:
+      tags:
+        - training
+      summary: Add a timeslot to a training.
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        $ref: '#/components/requestBodies/slotParam'
+      operationId: addTimeSlotToTraining
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '403':
+          $ref: '#/components/responses/unauthorized'
+      security:
+        - local_auth:
+            - 'add:slot'
+  /login:
+    post:
+      tags:
+        - user
+      summary: Authenticates against the server.
+      requestBody:
+        $ref: '#/components/requestBodies/credentials' 
+      operationId: login
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User' 
+        '403':
+          $ref: '#/components/responses/unauthorized'  
+    get:
+      tags:
+        - user
+      summary: Retrieves the currently authenticated user.
+      operationId: getAuthenticatedUser
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User' 
+  
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        permissions:
+          type: array
+          items:
+            type: number
+    Failure:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+        success: 
+          type: boolean
+          example: false
+    Training:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: JavaScript Course
+        trainer:
+          type: string
+          example: Peter Jahnsen
+        slots:
+          type: integer
+          format: int64
+          example: 10
+        duration:
+          type: integer
+          format: int64
+          example: 45
+        availableTimeSlots:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSlot'
+    UpsertTraining:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: JavaScript Course
+        trainer:
+          type: string
+          example: Peter Jahnsen
+        slots:
+          type: integer
+          format: int64
+          example: 10
+        duration:
+          type: integer
+          format: int64
+          example: 45           
+    Booking:
+      type: object
+      properties:
+        trainingId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        timeSlot:
+          $ref: '#/components/schemas/TimeSlot'
+    Credentials:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    TimeSlot:
+      type: string
+      example: '25.07 15:30'
+    CSRFToken:
+      type: string
+      example: '876asd972jasöl1-j12ppölas9'
+    TrainingId:
+      type: integer
+      example: 1
+  securitySchemes:
+    local_auth:
+      type: 'apiKey'
+      in: cookie
+      name: connect.sid
+  requestBodies:
+    slotParam:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TimeSlot'
+      description: The updated/added timeslot of the training.
+    upsertTraining:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpsertTraining'
+      description: The partial training data.
+    credentials:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Credentials'
+      description: The partial training data.
+  parameters:
+    csrf:
+      name: csrf
+      in: header
+      schema:
+        $ref: '#/components/schemas/CSRFToken'
+      description: The csrf token
+      required: true
+    id:
+      name: id
+      in: path
+      schema:
+        $ref: '#/components/schemas/TrainingId'
+      description: The training id
+      required: true
+    slotSlug:
+      name: slot
+      in: path
+      schema:
+        $ref: '#/components/schemas/TimeSlot'
+      description: The timeslot of the training.
+      required: true
+  responses:
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Failure'
