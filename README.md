@@ -84,11 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `C5H8NNaO4`, `tarent-challenge`, `statelesscloud`, `moritz-roessler-666b18175`, `GMail`, `moritz.roessler@gmail.com`, `Tarent Coding Challenge`, `A small SPA to showcase basic react / fullstack skill.`
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 * Love
@@ -218,7 +214,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@statelesscloud](https://twitter.com/statelesscloud) - moritz.roessler@gmail.com@GMail.com
+Moritz Roessler - [@statelesscloud](https://twitter.com/statelesscloud) - moritz.roessler@gmail.com
 
 Project Link: [https://github.com/C5H8NNaO4/tarent-challenge](https://github.com/C5H8NNaO4/tarent-challenge)
 
