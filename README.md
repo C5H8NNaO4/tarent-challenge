@@ -144,6 +144,13 @@ This is an example of how to list things you need to use the software and how to
    npm start
    ```
 
+### Tests
+
+All API operations are covered with basic unit tests using jest. In order to run them run
+```sh
+npm run test
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -184,7 +191,7 @@ Forms should be sanitized to prevent injection. (react does sanitize form inputs
 
 - [X] UI
 - [X] REST API
-    - [ ] Unit tests
+    - [X] Unit tests
 - [X] Documentation
     - [X] Swagger API docs.
     - [X] Security concerns.
