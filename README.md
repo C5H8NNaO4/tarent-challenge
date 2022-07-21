@@ -124,14 +124,18 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 4. Rename `.env.example` to `.env`
-5. Start the backend
+   ```sh
+   mv .env.example .env
    ```
-   cd backend
+   ```powershell
+   Rename-Item "demo.txt" -NewName "linuxhint.txt"
+   ```
+5. Start the backend
+   ```sh
    npm start
    ```
 5. Start the frontend
-   ```
-   cd frontend
+   ```sh
    npm start
    ```
 
