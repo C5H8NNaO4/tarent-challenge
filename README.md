@@ -225,6 +225,7 @@ Project Link: [https://github.com/C5H8NNaO4/tarent-challenge](https://github.com
 [issues-url]: https://github.com/C5H8NNaO4/tarent-challenge/issues
 [license-shield]: https://img.shields.io/github/license/C5H8NNaO4/tarent-challenge.svg?style=for-the-badge
 [license-url]: https://github.com/C5H8NNaO4/tarent-challenge/blob/master/LICENSE.txt
+[linkedin-url]: https://linkedin.com/in/Moritz%20Roessler
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/Moritz Roessler
+
 [product-screenshot]: images/screenshot.png
