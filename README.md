@@ -177,10 +177,11 @@ Forms should be sanitized to prevent injection. (react does sanitize form inputs
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [X] UI
+- [X] REST API
+- [X] Documentation
+    - [X] Swagger API docs.
+    - [X] Security concerns.
 
 See the [open issues](https://github.com/C5H8NNaO4/tarent-challenge/issues) for a full list of proposed features (and known issues).
 
