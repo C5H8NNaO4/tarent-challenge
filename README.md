@@ -128,7 +128,7 @@ This is an example of how to list things you need to use the software and how to
    mv .env.example .env
    ```
    ```powershell
-   Rename-Item "demo.txt" -NewName "linuxhint.txt"
+   Rename-Item ".env.example" -NewName ".env"
    ```
 5. Start the backend
    ```sh
