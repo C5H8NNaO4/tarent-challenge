@@ -2,3 +2,7 @@
 	path = frontend
 	url = https://github.com/C5H8NNaO4/tarent-challenge-frontend.git
 	branch = master
+[submodule "backend"]
+	path = backend
+	url = https://github.com/C5H8NNaO4/tarent-challenge-backend.git
+	branch = master
