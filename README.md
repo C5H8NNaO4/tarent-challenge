@@ -252,5 +252,5 @@ Project Link: [https://github.com/C5H8NNaO4/tarent-challenge](https://github.com
 [linkedin-url]: https://linkedin.com/in/moritz-roessler-666b18175
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[api-docs]: docs/index.html
+[api-docs]: https://htmlpreview.github.io/?https://github.com/C5H8NNaO4/tarent-challenge/blob/master/docs/index.html
 [product-screenshot]: images/screenshot.jpg
