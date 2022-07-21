@@ -146,24 +146,25 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Security Concerns
 
-A few security concerns come to my mind.
-    * CORS
+A few security concerns come to my mind.  
+
+    * CORS  
     Origin should be limited to the domain the client is running on. In this case `http://localhost:3000`
-    * CSRF
+    * CSRF  
     A random token should be double posted through cookies and http headers to prevent CSRF attacks.
-    * Check request bodies
+    * Check request bodies  
     To prevent crashes XSS or DOS attacks, all request bodies should be tested against plausibility and rejected if they contain invalid or malformed data.
-    * HTTPS
+    * HTTPS  
     In a production environment a secured connection should be used.
-    * Authentication
+    * Authentication  
     The API should be only accessible by authenticated users.
-    * Authorization
+    * Authorization  
     The API should be a authorizable based on permissions to prevent leakage of sensitive information.
-    * Software Integrity
+    * Software Integrity  
     The code should be unit tested to ensure a degree of integitry in order to prevent bugs slipping into production that could be exploited.
-    * Access Loggin
+    * Access Loggin  
     To recognize DOS attempts or other malicious access, sufficient logging should be deployed on the serverside.
-    * Injection
+    * Injection  
     Forms should be sanitized to prevent injection. (react does sanitize form inputs).
     
 
