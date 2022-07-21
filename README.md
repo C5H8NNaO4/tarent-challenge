@@ -144,6 +144,8 @@ This is an example of how to list things you need to use the software and how to
    npm start
    ```
 
+### Credentials
+There are two users. **admin** and **user**. Both use the password **password**
 ### Tests
 
 All API operations are covered with basic unit tests using jest. In order to run them run
