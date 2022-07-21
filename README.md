@@ -84,7 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `C5H8NNaO4`, `tarent-challenge`, `statelesscloud`, `Moritz Roessler`, `GMail`, `moritz.roessler@gmail.com`, `Tarent Coding Challenge`, `A small SPA to showcase basic react / fullstack skill.`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `C5H8NNaO4`, `tarent-challenge`, `statelesscloud`, `moritz-roessler-666b18175`, `GMail`, `moritz.roessler@gmail.com`, `Tarent Coding Challenge`, `A small SPA to showcase basic react / fullstack skill.`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -225,7 +225,7 @@ Project Link: [https://github.com/C5H8NNaO4/tarent-challenge](https://github.com
 [issues-url]: https://github.com/C5H8NNaO4/tarent-challenge/issues
 [license-shield]: https://img.shields.io/github/license/C5H8NNaO4/tarent-challenge.svg?style=for-the-badge
 [license-url]: https://github.com/C5H8NNaO4/tarent-challenge/blob/master/LICENSE.txt
-[linkedin-url]: https://linkedin.com/in/Moritz%20Roessler
+[linkedin-url]: https://linkedin.com/in/moritz-roessler-666b18175
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
 [product-screenshot]: images/screenshot.png
