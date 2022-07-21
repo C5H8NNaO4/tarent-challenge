@@ -181,7 +181,7 @@ In a production environment a secured connection should be used.
 * Authentication  
 The API should be only accessible by authenticated users.
 * Authorization  
-The API should be a authorizable based on permissions to prevent leakage of sensitive information.
+The API should be authorized based on permissions to prevent leakage of sensitive information.
 * Software Integrity  
 The code should be unit tested to ensure a degree of integitry in order to prevent bugs slipping into production that could be exploited.
 * Access Loggin  
