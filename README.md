@@ -121,7 +121,7 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
    ```sh
-   cd tarent-challenge/backend
+   cd tarent-challenge/frontend
    npm install
    ```
 4. Build the backend
