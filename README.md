@@ -114,6 +114,7 @@ This is an example of how to list things you need to use the software and how to
 1. Clone the repo
    ```sh
    git clone --recurse-submodules -j2 https://github.com/C5H8NNaO4/tarent-challenge.git
+   cd tarent-challenge
    ```
 3. Install NPM packages
    ```sh
