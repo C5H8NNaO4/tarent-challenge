@@ -114,27 +114,26 @@ This is an example of how to list things you need to use the software and how to
 1. Clone the repo
    ```sh
    git clone --recurse-submodules -j2 https://github.com/C5H8NNaO4/tarent-challenge.git
-   cd tarent-challenge
    ```
-3. Install NPM packages
+3. Open a split terminal and install NPM packages for both, frontend and backend repo.
    ```sh
-   cd backend
+   cd tarent-challenge/backend
    npm install
    ```
    ```sh
-   cd frontend
+   cd tarent-challenge/backend
    npm install
    ```
 4. Build the backend
    ```sh
    npm run build
    ```
-5. Rename `.env.example` to `.env`
+5. Copy `.env.example` to `.env` in both folders */frontend* and */backend*
    ```sh
-   mv .env.example .env
+   cp .env.example .env
    ```
    ```powershell
-   Rename-Item ".env.example" -NewName ".env"
+   Copy-Item ".env.example" -NewName ".env"
    ```
 6. Start the backend
    ```sh
