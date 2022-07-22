@@ -128,7 +128,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm run build
    ```
-5. Copy `.env.example` to `.env` in both folders */frontend* and */backend*
+5. **Important**! Copy `.env.example` to `.env` in **both** folders */frontend* and */backend*
    ```sh
    cp .env.example .env
    ```
