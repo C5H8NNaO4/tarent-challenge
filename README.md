@@ -133,7 +133,7 @@ This is an example of how to list things you need to use the software and how to
    cp .env.example .env
    ```
    ```powershell
-   Copy-Item ".env.example" -NewName ".env"
+   Copy-Item ".env.example" ".env"
    ```
 6. Start the backend
    ```sh
